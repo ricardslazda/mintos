@@ -25,7 +25,7 @@ return new class extends Migration
             $table->decimal('recipient_balance_before', 20);
             $table->decimal('recipient_balance_after', 20);
 
-            $table->timestamp('transaction_date');
+            $table->timestamps();
 
             /** Restrict hard deletion. */
             $table->foreign('sender_account_id')->references('id')->on('accounts')->onDelete('restrict');

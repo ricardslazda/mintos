@@ -105,7 +105,6 @@ readonly class FundsTransferService
             'recipient_balance_before' => $dto->recipientBalanceBefore,
             'recipient_balance_after' => $dto->recipientAccount->balance,
             'currency' => $dto->recipientAccount->currency,
-            'transaction_date' => now(),
         ]);
     }
 

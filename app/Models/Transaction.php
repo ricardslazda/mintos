@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Support\Carbon;
 
 /**
  *
@@ -23,7 +22,6 @@ use Illuminate\Support\Carbon;
  * @property string $recipient_balance_before
  * @property string $recipient_balance_after
  * @property string $currency
- * @property Carbon $transaction_date
  * @property-read Account|null $account
  * @method static Builder|Transaction newModelQuery()
  * @method static Builder|Transaction newQuery()
@@ -43,15 +41,7 @@ use Illuminate\Support\Carbon;
 class Transaction extends Model
 {
     use HasFactory;
-
-    protected $table = 'transactions';
-    public $timestamps = false;
-
     protected $guarded = [];
-
-    protected $casts = [
-        'transaction_date' => 'datetime',
-    ];
 
     public function account(): BelongsTo
     {

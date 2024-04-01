@@ -94,7 +94,7 @@ class FundsTransferServiceTest extends TestCase
         $response = $fundsTransferService->create($request);
 
         $this->assertInstanceOf(JsonResponse::class, $response);
-        $this->assertEquals(403, $response->status());
+        $this->assertEquals(404, $response->status());
         $this->assertEquals('Currency rate not found.', $response->getData()->message);
     }
 
@@ -125,7 +125,7 @@ class FundsTransferServiceTest extends TestCase
         $response = $fundsTransferService->create($request);
 
         $this->assertInstanceOf(JsonResponse::class, $response);
-        $this->assertEquals(403, $response->status());
+        $this->assertEquals(422, $response->status());
         $this->assertEquals('Insufficient funds.', $response->getData()->message);
     }
 }
