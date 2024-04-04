@@ -7,10 +7,21 @@
 - Spin up the Docker containers.
 ```sh
 ./vendor/bin/sail up
-```    
+```
+
 - Do a fresh database install.
 ```sh
 ./vendor/bin/sail artisan migrate:fresh --seed
+```
+
+- Create .env file.
+```sh
+cp .env.example .env
+```
+
+- Fill the required .env parameters.
+```sh
+FREE_CURRENCY_API_KEY={API_KEY}
 ```
 
 
